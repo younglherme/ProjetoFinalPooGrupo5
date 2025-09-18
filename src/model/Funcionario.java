@@ -23,6 +23,25 @@ class Funcionario extends Pessoa {
 		}
 
 
+		public double getDescontoInss() {
+			return descontoInss;
+		}
+
+		public void setDescontoInss(double descontoInss) {
+			this.descontoInss = descontoInss;
+		}
+
+		public double getDescontoIr() {
+			return descontoIr;
+		}
+
+		public void setDescontoIr(double descontoIr) {
+			this.descontoIr = descontoIr;
+		}
+
+		public void setSalarioBruto(double salarioBruto) {
+			this.salarioBruto = salarioBruto;
+		}
 
 		public double calcularSalarioLiquido() {
 	        return salarioBruto - descontoInss - descontoIr;
