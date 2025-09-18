@@ -1,4 +1,4 @@
-package model;
+package Mercado;
 
 import java.time.LocalDate;
 
@@ -17,7 +17,14 @@ class Funcionario extends Pessoa {
 	        this.descontoIr = descontoIr;
 	    }
 
-	    public double calcularSalarioLiquido() {
+	    
+	    public double getSalarioBruto() {
+			return salarioBruto;
+		}
+
+
+
+		public double calcularSalarioLiquido() {
 	        return salarioBruto - descontoInss - descontoIr;
 	    }
 
