@@ -1,10 +1,14 @@
+package Tributo;
+
+import java.time.LocalDate;
+
 public class FolhaPagamento {
 
 	private String codigo;
 	private Funcionario funcionario;
 	private LocalDate dataPagamento;
-	private CalculoInss descontoInss;
-	private CalculoIr descontoIr;
+	private double descontoInss;
+	private double descontoIr;
 	private double salarioLiquido;
 	
 
@@ -31,15 +35,15 @@ public class FolhaPagamento {
 		return dataPagamento;
 	}
 
-	public BigDecimal getDescontoINSS() {
-		return descontoINSS;
+	public double getDescontoINSS() {
+		return descontoInss;
 	}
 
-	public BigDecimal getDescontoIR() {
-		return descontoIR;
+	public double getDescontoIR() {
+		return descontoIr;
 	}
 
-	public BigDecimal getSalarioLiquido() {
+	public double getSalarioLiquido() {
 		return salarioLiquido;
 	}
 
@@ -47,13 +51,15 @@ public class FolhaPagamento {
 
 	public String toString() {
 		return String.format("FolhaPagamento[cod=%s, funcionario=%s, data=%s, INSS=%.2f, IR=%.2f, líquido=%.2f]",
-				codigo, funcionario.getNome(), dataPagamento, descontoINSS, descontoIR, salarioLiquido);
+				codigo, funcionario.getNome(), dataPagamento, descontoInss, descontoIr, salarioLiquido);
 	}
-	public double calculasalario() {
-		if (funcionario.getSalarioBruto()>=2259.21 && funcionario.getSalarioBruto() <= ) {
-			return salarioLiquido = funcionario.getSalarioBruto() - descontoInss - descontoIr;
+	public double calculaSalarioLiquido() {
+		if (funcionario.getSalarioBruto()>=2259.21) {
+			return salarioLiquido = funcionario.getSalarioBruto() - funcionario.getDescontoInss() - funcionario.getDescontoIr();
 		}
-		else
+		else {
+			return salarioLiquido = funcionario.getSalarioBruto() - funcionario.getDescontoInss();
+		}
 		
 	}
 	
