@@ -1,4 +1,4 @@
-package Tributo;
+package model;
 
 public interface CalculoTributos {
 	
