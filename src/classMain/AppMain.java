@@ -20,7 +20,7 @@ public class AppMain {
         try (Connection conn = conexaoBanco.getConnection();
              Scanner sc = new Scanner(System.in)) {
 
-            FuncionarioDao funcionarioDao = new FuncionarioDao(conn);
+            FuncionarioDao funcionarioDao = new FuncionarioDao();
             DependenteDao dependenteDao = new DependenteDao(conn);
             FolhaPagamentoDao folhaDao = new FolhaPagamentoDao(conn);
 

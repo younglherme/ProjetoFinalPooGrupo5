@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Funcionario;
 
@@ -11,7 +13,7 @@ public class FuncionarioDao {
 
 	private Connection connection;
 
-	public FuncionarioDao(Connection connection) {
+	public FuncionarioDao() {
 		this.connection = connection;
 	}
 
@@ -57,7 +59,6 @@ public class FuncionarioDao {
 			System.err.println("Erro ao atualizar funcionário: " + e.getMessage());
 		}
 	}
-	
 	
 	// Delete
 	public void remover(String cpf) {
